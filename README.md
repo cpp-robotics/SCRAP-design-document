@@ -11,3 +11,13 @@ For this protocol proposal, each message must have a header that spans 3 bytes, 
 | 1           | 2         | 3              | 4+               |
 | ----------- | --------- | -------------- | ---------------- |
 | Reciever ID | Sender ID | Message Number | Message Contents |
+
+# Messages
+
+## 01 - Grid Update
+
+Becuase we are able to transfer data at a more than sufficient speed of 1 mbps, it is proposed that the grid be updated one square at a time. This also facilitates the ability to rapidly respond to changes in the environment. Unfortunately, due to how little data is required for this message, there
+is a lot of wasted packet space.
+|1 | 2 | 3 |
+|- | - | - |
+| X Coordinate | Y Coordinate | Pitch Change (signed value) |
